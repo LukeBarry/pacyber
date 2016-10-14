@@ -1,5 +1,5 @@
 CREATE TABLE student_detail (
-StateID integer primary key,
+StateID bigint primary key,
 AlternateID text not null,
 EntryDate text not null,
 StudentID text not null,
@@ -35,7 +35,7 @@ IEP_Writer text not null
 
 
 CREATE TABLE course_grades (
-StateID integer not null,
+stateid bigint not null,
 SchoolYear integer not null,
 CourseName text not null,
 primary key(StateID, SchoolYear, CourseName),
@@ -72,7 +72,7 @@ IEP_Writer text not null
 
 
 CREATE TABLE pvaas (
-PAsecureID integer not null,
+PAsecureID bigint not null,
 subject text not null,
 PredictingResultsFor text not null,
 primary key(PAsecureID, subject, PredictingResultsFor),
@@ -103,7 +103,7 @@ GradeLevelProjection integer not null
 
 CREATE TABLE pssa (
 Subject text not null,
-PASecureID integer not null,
+PAsecureID bigint not null,
 TestedYear integer not null,
 primary key(PAsecureID, Subject, TestedYear),
 LocalStudentID text not null,
@@ -188,7 +188,7 @@ EnrolafterOct1onorbeforeOct1Dist text not null
 
 CREATE TABLE keystone (
 TestName text not null,
-PAsecureID integer not null,
+PAsecureID bigint not null,
 AdminYear integer not null,
 AdminDate text not null,
 primary key(PAsecureID, TestName, AdminYear, AdminDate),
@@ -262,7 +262,7 @@ EnrolledafterOct1onorbeforeOct1Dist text not null
 
 
 CREATE TABLE first_in_math (
-StateID integer primary key,
+stateid bigint primary key,
 AlternateID text not null,
 LastName text not null,
 FirstName text not null,
