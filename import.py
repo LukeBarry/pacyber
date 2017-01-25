@@ -28,7 +28,6 @@ data_types = {
 conn = psycopg2.connect("")
 # connect the tables:   psql <schema.sql
 
-
 # loading up to read the csv files, open the files and say read this as a csv and return dictionaries
 for table, (filename, primary_key) in tables.items():
     with open(filename) as f, conn, conn.cursor() as cur:
@@ -48,5 +47,13 @@ for table, (filename, primary_key) in tables.items():
         stmt = "insert into %s (%s) values (%%s%s)" % (table, ",".join(cols), ",%s" * (len(cols)-1)) 
         for row in f: cur.execute(stmt, [row[fld] for fld in fields])
    
+# read the sql tables
+# http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_sql.html
 
-    
+#put the cleaning and wranlging in a separate file
+
+# I could add a year column to all the csvs or eventually i could add a year directory and link to each year
+
+select * from student_detail join course_grades on student_detail.PAsecure = course_grades.StateID;
+
+# stick with postgresql and learn general database postgresql instead of specific to one software
